@@ -3,6 +3,7 @@ import Link from "next/link";
 import getSongs from "@/actions/getSongs";
 import Header from "@/components/Header";
 import Button from "@/components/Button";
+import Image from 'next/image';
 
 import PageContent from "./components/PageContent";
 import PageContent2 from "./components/PageContent2";
@@ -34,7 +35,7 @@ export default async function Home() {
           <div className="md:flex md:items-center bg-slate-950">
 
             <div className="md:w-1/2 md:pl-6 order-2 md:order-1">
-              <img src="/images/vocal1.jpeg" alt="vocal1" className="rounded-l-full" />
+              <Image src="/images/vocal1.jpeg" alt="vocal1" className="rounded-l-full" />
             </div>
 
             <div className="md:w-1/2 md:pr-6 ml-0 md:ml-20 ">
@@ -204,7 +205,7 @@ export default async function Home() {
           </button>
         </div> 
         <div className="justify-center items-center gap-x-2 mt-5 grid">
-          <p className="flex justify-center items-center text-center mt-2 text-xs opacity-60 font-light">COPYRİGHT © SparkleSound. TÜM HAKLARI SPARKLE SOUNDE'E AİTTİR. </p>
+          <p className="flex justify-center items-center text-center mt-2 text-xs opacity-60 font-light">COPYRİGHT © SparkleSound. TÜM HAKLARI SOUND SPARKLE AİTTİR. </p>
           <p className="flex justify-center items-center text-center mt-2 text-md text-rose-900">Expo Digital</p>
         </div>
       </div>

@@ -33,7 +33,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs }) => {
 
   useEffect(() => {
     applyFilters(); 
-  }, [vokalFilter, licenseFilter]);
+  },[vokalFilter, licenseFilter]);
 
   const applyFilters = () => {
     // Apply the filters to the initial songs data

@@ -80,7 +80,7 @@ const Liked = async () => {
           </button>
         </div> 
         <div className="justify-center items-center gap-x-2 grid">
-          <p className="flex justify-center items-center text-center mt-2 text-xs opacity-60 font-light">COPYRİGHT © SparkleSound. TÜM HAKLARI SPARKLE SOUNDE'E AİTTİR. </p>
+          <p className="flex justify-center items-center text-center mt-2 text-xs opacity-60 font-light">COPYRİGHT © SparkleSound. TÜM HAKLARI SOUND SPARKLE AİTTİR. </p>
           <p className="flex justify-center items-center text-center mt-2 text-md text-rose-900">Expo Digital</p>
         </div>
       </div>  
