@@ -35,7 +35,7 @@ export default async function Home() {
           <div className="md:flex md:items-center bg-slate-950">
 
             <div className="md:w-1/2 md:pl-6 order-2 md:order-1">
-              <Image src="/images/vocal1.jpeg" alt="vocal1" className="rounded-l-full" />
+            <Image src="/images/vocal1.jpeg" alt="vocal1" className="rounded-l-full" />
             </div>
 
             <div className="md:w-1/2 md:pr-6 ml-0 md:ml-20 ">
