@@ -35,21 +35,19 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs }) => {
     applyFilters(); 
   },[vokalFilter, licenseFilter]);
 
-  const applyFilters = () => {
+  function applyFilters() {
     // Apply the filters to the initial songs data
     const filtered = songs.filter((song) => {
-      const matchesVokalFilter =
-        vokalFilter === "all" || song.vokal === vokalFilter;
-      const matchesLicenseFilter =
-        licenseFilter === "all" || song.lisans === licenseFilter;
-      
-      return matchesVokalFilter && matchesLicenseFilter ;
+      const matchesVokalFilter = vokalFilter === "all" || song.vokal === vokalFilter;
+      const matchesLicenseFilter = licenseFilter === "all" || song.lisans === licenseFilter;
+
+      return matchesVokalFilter && matchesLicenseFilter;
     });
 
     // Update the filtered songs
     setFilteredSongs(filtered);
-    
-  };
+
+  }
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
