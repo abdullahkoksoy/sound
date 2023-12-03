@@ -49,7 +49,7 @@ const LikedContent: React.FC<LikedContentProps> = ({
  
 
   return ( 
-    <div className={`flex flex-col gap-y-2 pl-6 mt-14 ${ isMobile ? 'pt-0' : 'pt-6' }`}>
+    <div className={`flex flex-col gap-y-2 pl-6 pr-4 mt-14 ${ isMobile ? 'pt-0' : 'pt-6' }`}>
       {songs.map((song: any) => (
         <div 
           key={song.id} 
