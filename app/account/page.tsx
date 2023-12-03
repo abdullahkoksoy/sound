@@ -30,7 +30,7 @@ export default async function Vocals() {
             Beğendiğiniz Vokalleriniz
           </h1>
         </div>
-      <div>
+      <div className="min-h-screen">
         <PageContent2 songs={songs} />
       </div>
 

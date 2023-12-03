@@ -24,7 +24,7 @@ export default  async function Artist() {
             Sanatçıları Keşfet
           </h1>
         </div> 
-      <div>
+      <div className="min-h-screen">
         <FilteredContent songs={songs} />
       </div>
 

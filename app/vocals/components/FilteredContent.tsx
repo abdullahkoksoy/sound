@@ -11,6 +11,7 @@ import useOnPlay from "@/hooks/useOnPlay";
 import { FiDownload } from "react-icons/fi";
 import { useMediaQuery } from 'react-responsive';
 import { IoMdClose } from "react-icons/io";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 
 interface FilteredContentProps {
@@ -227,15 +228,18 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
       )}
         <div className="mb-4 z-20">
           <label htmlFor="vokalSelect"></label>
-          <div className="vokal-select z-10 mt-4">
+          <div className="vokal-select z-10 mt-10">
             
             <button
               onClick={() => setIsVokalMenuOpen(!isVokalMenuOpen)}
-              className={`w-full h-6 text-left indent-6 font-semibold text-base ${
+              className={`w-full h-6 text-left flex items-center justify-between indent-6 font-semibold text-base ${
                 isMobile ? 'bg-rose-900' : 'bg-slate-900'
               }`}
             >
-              {isVokalMenuOpen ? "\u2715" : "Vokal seç \u25bf"}
+              <span className="flex items-center justify-between">
+                {isVokalMenuOpen ? null : "Vokal"}
+                {!isVokalMenuOpen ? <FaChevronDown className="ml-40 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+              </span>
             </button>
             {isVokalMenuOpen && (
               <ul className={`z-20 rounded-b-xl text-xs ${
@@ -250,7 +254,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                       onChange={() => setVokalFilter([])}
                       className="z-20 mb-5 ml-6 mt-5" 
                     />
-                    Tüm Vokaller
+                    <span className="ml-3 font-semibold text-sm">Tüm Vokaller</span> 
                   </label>
                 </li>
                 {vokalOptions.map((vokal) => (
@@ -262,7 +266,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                         onChange={() => handleVokalSelect(vokal)}
                         className="z-20 mb-5 ml-6 mt-2"
                       />
-                      {vokal}
+                      <span className="ml-3 font-semibold text-sm">{vokal}</span>
                     </label>
                   </li>
                 ))}
@@ -284,11 +288,14 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
             
             <button
               onClick={() => setIsLicenseMenuOpen(!isLicenseMenuOpen)}
-              className={`w-full h-6 text-left indent-6 font-semibold text-base ${
+              className={`w-full h-6 text-left flex items-center justify-between indent-6 font-semibold text-base ${
                 isMobile ? 'bg-rose-900' : 'bg-slate-900'
               }`}
             >
-              {isLicenseMenuOpen ? "\u2715" : "Lisans seç \u25bf"}
+              <span className="flex items-center mt-10">
+                {isLicenseMenuOpen ? null : "Lisans"}
+                {!isLicenseMenuOpen ? <FaChevronDown className="ml-39 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+              </span>
             </button>
             {isLicenseMenuOpen && (
               <ul className={`z-20 rounded-b-xl text-xs ${
@@ -303,7 +310,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                       onChange={() => setLicenseFilter([])}
                       className="z-20 mb-5 ml-6 mt-5" 
                     />
-                    Tüm Lisanslar
+                    <span className="ml-3 font-semibold text-sm">Tüm Lisanslar</span>
                   </label>
                 </li>
                 {licenseOptions.map((license) => (
@@ -315,7 +322,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                         onChange={() => handleLicenseSelect(license)}
                         className="z-20 mb-5 ml-6 mt-2"
                       />
-                      {license}
+                      <span className="ml-3 font-semibold text-sm">{license}</span>
                     </label>
                   </li>
                 ))}
@@ -337,11 +344,14 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
             
             <button
               onClick={() => setIsArtistMenuOpen(!isArtistMenuOpen)}
-              className={`w-full h-6 text-left indent-6 font-semibold text-base ${
+              className={`w-full h-6 text-left flex items-center justify-between indent-6 font-semibold text-base ${
                 isMobile ? 'bg-rose-900' : 'bg-slate-900'
               }`}
             >
-              {isArtistMenuOpen ? "\u2715" : "Sanatçı seç \u25bf"}
+              <span className="flex items-center mt-10">
+                {isArtistMenuOpen ? null : "Sanatçı"}
+                {!isArtistMenuOpen ? <FaChevronDown className="ml-37 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+              </span>
             </button>
             {isArtistMenuOpen && (
               <ul className={`z-20 rounded-b-xl text-xs ${
@@ -356,7 +366,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                       onChange={() => setArtistFilter([])}
                       className="z-20 mb-5 ml-6 mt-5" 
                     />
-                    Tüm Sanatçılar
+                    <span className="ml-3 font-semibold text-sm">Tüm Sanatçılar</span>
                   </label>
                 </li>
                 {artistOptions.map((artist) => (
@@ -368,7 +378,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                         onChange={() => handleArtistSelect(artist)}
                         className="z-20 mb-5 ml-6"
                       />
-                      {artist}
+                      <span className="ml-3 font-semibold text-sm">{artist}</span>
                     </label>
                   </li>
                 ))}
@@ -390,11 +400,14 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
           
             <button
               onClick={() => setIsGenreMenuOpen(!isGenreMenuOpen)}
-              className={`w-full h-6 text-left indent-6 font-semibold text-base ${
+              className={`w-full h-6 text-left flex items-center justify-between indent-6 font-semibold text-base ${
                 isMobile ? 'bg-rose-900' : 'bg-slate-900'
               }`}
             >
-              {isGenreMenuOpen ? "\u2715" : "Tür seç \u25bf"}
+              <span className="flex items-center mt-10">
+                {isGenreMenuOpen ? null : "Tür"}
+                {!isGenreMenuOpen ? <FaChevronDown className="ml-45 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+              </span>
             </button>
             {isGenreMenuOpen && (
               <ul className={`z-20 rounded-b-xl text-xs ${
@@ -409,7 +422,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                       onChange={() => setGenreFilter([])}
                       className="z-10 mb-5 ml-6 mt-5"
                     />
-                    Tüm Türler
+                    <span className="ml-3 font-semibold text-sm">Tüm Türler</span>
                   </label>
                 </li>
                 {genreOptions.map((genre) => (
@@ -421,7 +434,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                         onChange={() => handleGenreSelect(genre)}
                         className="z-10 mb-5 ml-6"
                       />
-                      {genre}
+                      <span className="ml-3 font-semibold text-sm">{genre}</span>
                     </label>
                   </li>
                 ))}
@@ -443,11 +456,14 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
           
             <button
               onClick={() => setIsKeyMenuOpen(!isKeyMenuOpen)}
-              className={`w-full h-6 text-left indent-6 font-semibold text-base ${
+              className={`w-full h-6 text-left flex items-center justify-between indent-6 font-semibold text-base ${
                 isMobile ? 'bg-rose-900' : 'bg-slate-900'
               }`}
             >
-              {isKeyMenuOpen ? "\u2715" : "Key seç \u25bf"}
+              <span className="flex items-center mt-10">
+                {isKeyMenuOpen ? null : "Key"}
+                {!isKeyMenuOpen ? <FaChevronDown className="ml-44.5 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+              </span>
             </button>
             {isKeyMenuOpen && (
             <ul>
@@ -461,9 +477,9 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                       type="checkbox"
                       checked={keyFilter.length === 0}
                       onChange={() => setKeyFilter([])}
-                      className={`z-10 ml-6 ${ isMobile? 'mt-2' : 'mt-5'}`}
+                      className={`z-10 ml-2 ${ isMobile? 'mt-2' : 'mt-5'}`}
                     />
-                    Tümü
+                    <span className="ml-3 font-semibold text-sm">Tümü</span>
                   </label>
                 </li>
                 {keyOptions.map((key) => (
@@ -473,9 +489,9 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                         type="checkbox"
                         checked={keyFilter.includes(key)}
                         onChange={() => handleKeySelect(key)}
-                        className={`z-10 ml-6 ${ isMobile? 'mb-0' : 'mb-5'}`}
+                        className={`z-10 ml-2 ${ isMobile? 'mb-0' : 'mb-5'}`}
                       />
-                      {key}
+                      <span className="ml-3 font-semibold text-sm">{key}</span>
                     </label>
                   </li>
                 ))}
@@ -498,11 +514,14 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
           
             <button
               onClick={() => setIsBPMMenuOpen(!isBPMMenuOpen)}
-              className={`w-full h-6 text-left indent-6 font-semibold text-base ${
+              className={`w-full h-6 text-left flex items-center justify-between indent-6 font-semibold text-base ${
                 isMobile ? 'bg-rose-900' : 'bg-slate-900'
               }`}
             >
-              {isBPMMenuOpen ? "\u2715" : "BPM seç \u25bf"}
+              <span className="flex items-center mt-10">
+                {isBPMMenuOpen ? null : "BPM"}
+                {!isBPMMenuOpen ? <FaChevronDown className="ml-43 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+              </span>
             </button>
             {isBPMMenuOpen && (
               <ul className={`z-20 rounded-b-xl text-xs ${
@@ -517,7 +536,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                       onChange={() => setBPMFilter([])}
                       className="z-10 mb-5 ml-6 mt-5"
                     />
-                    Tüm BPM
+                    <span className="ml-3 font-semibold text-sm">Tüm BPM</span>
                   </label>
                 </li>
                 {bpmOptions.map((bpm) => (
@@ -529,7 +548,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                         onChange={() => handleBPMSelect(bpm)}
                         className={`z-10 ml-6 ${ isMobile? 'mb-2' : 'mb-5'}`}
                       />
-                      {bpm}
+                      <span className="ml-3 font-semibold text-sm">{bpm}</span>
                     </label>
                   </li>
                 ))}
@@ -546,7 +565,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
           </div>
         </div>
       </div>
-      <div className={` ${isMobile ? 'w-full' : 'w-4/5'} bg-slate-900 border-l-2 border-slate-700`}>
+      <div className={` ${isMobile ? 'w-full border-none' : 'w-4/5 '} bg-slate-900 border-l-2 border-slate-700`}>
         <div className="mb-14 m-10">
           <h1 
             className=

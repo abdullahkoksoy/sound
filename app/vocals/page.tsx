@@ -8,7 +8,7 @@ export default async function Vocals() {
   
   return (
     <div className="bg-slate-900 border-t border-slate-700">
-      <div>
+      <div className="min-h-screen">
         <FilteredContent songs={songs} songUrl={""}/>
       </div>
 

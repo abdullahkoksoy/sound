@@ -25,7 +25,7 @@ const Liked = async () => {
           Satın Alınan Vokalleriniz
         </h1>
       </div>
-    <div>
+    <div className="min-h-screen">
       <LikedContent songs={songs} />
     </div>
     <div className="mt-2 w-full bg-gradient-to-b from-slate-950">
