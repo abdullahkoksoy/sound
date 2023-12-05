@@ -16,6 +16,7 @@ import Demo from '@/components/Demo'
 import SearchInput from './SearchInput';
 import SearchBar from '@/app/search/components/SearchBar';
 
+
 interface SidebarProps {
     children: React.ReactNode;
     songs: Song[]
@@ -49,6 +50,11 @@ const Sidebar: React.FC<SidebarProps> = ({
             label: 'Profil',
             active: pathname === '/profile',
             href: '/profile',
+        },
+        {   
+            label: 'Admin',
+            active: pathname === '/AdminSS',
+            href: '/AdminSS',
         },
         {    
             label: 'İletişim',

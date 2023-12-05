@@ -11,10 +11,11 @@ import Player from '@/components/Player'
 
 
 
+
 const font = Figtree({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Spotify Clone',
+  title: 'Sound Sparkle',
   description: 'Listen to music!',
 }
 
@@ -23,7 +24,7 @@ export const revalidate = 0;
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   const userSongs = await getSongsByUserId();
 
