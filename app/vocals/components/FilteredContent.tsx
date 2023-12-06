@@ -113,11 +113,11 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
     "Bayan",
   ];
 
-  useEffect(() => {
+  {/*useEffect(() => {
     if (!isLoading && !user) {
       router.replace("/");
     }
-  }, [isLoading, user, router]);
+  }, [isLoading, user, router]);*/}
 
   const applyFilters = () => {
     // Apply the filters to the initial songs data
@@ -228,7 +228,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
       )}
         <div className="mb-4 z-20">
           <label htmlFor="vokalSelect"></label>
-          <div className="vokal-select z-10 mt-10">
+          <div className="vokal-select z-10 mt-">
             
             <button
               onClick={() => setIsVokalMenuOpen(!isVokalMenuOpen)}
@@ -236,9 +236,9 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
                 isMobile ? 'bg-rose-900' : 'bg-slate-900'
               }`}
             >
-              <span className="flex items-center justify-between">
+              <span className="flex items-center justify-between mt-10">
                 {isVokalMenuOpen ? null : "Vokal"}
-                {!isVokalMenuOpen ? <FaChevronDown className="ml-40 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+                {!isVokalMenuOpen ? <FaChevronDown className="ml-40 opacity-40 hidden xl:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden xl:inline-block"/> }
               </span>
             </button>
             {isVokalMenuOpen && (
@@ -294,7 +294,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
             >
               <span className="flex items-center mt-10">
                 {isLicenseMenuOpen ? null : "Lisans"}
-                {!isLicenseMenuOpen ? <FaChevronDown className="ml-39 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+                {!isLicenseMenuOpen ? <FaChevronDown className="ml-39 opacity-40 hidden xl:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden xl:inline-block"/> }
               </span>
             </button>
             {isLicenseMenuOpen && (
@@ -350,7 +350,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
             >
               <span className="flex items-center mt-10">
                 {isArtistMenuOpen ? null : "Sanatçı"}
-                {!isArtistMenuOpen ? <FaChevronDown className="ml-37 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+                {!isArtistMenuOpen ? <FaChevronDown className="ml-37 opacity-40 hidden xl:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden xl:inline-block"/> }
               </span>
             </button>
             {isArtistMenuOpen && (
@@ -406,7 +406,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
             >
               <span className="flex items-center mt-10">
                 {isGenreMenuOpen ? null : "Tür"}
-                {!isGenreMenuOpen ? <FaChevronDown className="ml-45 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+                {!isGenreMenuOpen ? <FaChevronDown className="ml-45 opacity-40 hidden xl:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden xl:inline-block"/> }
               </span>
             </button>
             {isGenreMenuOpen && (
@@ -462,7 +462,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
             >
               <span className="flex items-center mt-10">
                 {isKeyMenuOpen ? null : "Key"}
-                {!isKeyMenuOpen ? <FaChevronDown className="ml-44.5 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+                {!isKeyMenuOpen ? <FaChevronDown className="ml-44.5 opacity-40 hidden xl:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden xl:inline-block"/> }
               </span>
             </button>
             {isKeyMenuOpen && (
@@ -520,7 +520,7 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs, songUrl }) => 
             >
               <span className="flex items-center mt-10">
                 {isBPMMenuOpen ? null : "BPM"}
-                {!isBPMMenuOpen ? <FaChevronDown className="ml-43 opacity-40 hidden md:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden md:inline-block"/> }
+                {!isBPMMenuOpen ? <FaChevronDown className="ml-43 opacity-40 hidden xl:inline-block" /> : <FaChevronUp  className="ml-56 opacity-40 hidden xl:inline-block"/> }
               </span>
             </button>
             {isBPMMenuOpen && (

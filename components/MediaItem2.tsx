@@ -36,7 +36,6 @@ const MediaItem: React.FC<MediaItemProps> = ({
         ${isMobile ? 'w-64' : 'w-80'}
         p-2 
         rounded-l-2xl
-        ${isMobile ? '' : 'border-t border-slate-500'}
         rounded-r-2xl
       `}
     >

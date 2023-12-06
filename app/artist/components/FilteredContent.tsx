@@ -24,12 +24,11 @@ const FilteredContent: React.FC<FilteredContentProps> = ({ songs }) => {
   const onPlay = useOnPlay(songs);
 
 
-  useEffect(() => {
-    
+  {/*useEffect(() => {
     if (!isLoading && !user) {
       router.replace("/");
     }
-  }, [isLoading, user, router]);
+  }, [isLoading, user, router]);*/}
 
   useEffect(() => {
     applyFilters(); 

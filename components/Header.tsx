@@ -101,13 +101,14 @@ const Header: React.FC<HeaderProps> = ({
                   
                 </Button>
               </div>
-              <div>
+              <div className="mt-8 mr-4">
                 <Button
                   onClick={authModal.onOpen}
                   className="
                     bg-white
                     px-6
                     py-2
+                    
                   " 
                 >
                     Login

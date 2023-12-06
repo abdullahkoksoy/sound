@@ -41,6 +41,7 @@ const Slider: React.FC<SlideProps> = ({
           grow 
           rounded-full 
           h-[3px]
+          cursor-pointer
         "
       >
         <RadixSlider.Range 

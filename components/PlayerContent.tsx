@@ -178,9 +178,6 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
         <div className="flex w-full justify-start">
           <div className="flex items-center gap-x-4">
             <MediaItem2 data={song} />
-            <button onClick={() =>{downloadFileAtURL(songUrl)}}>
-              <FiDownload className={` ${ isMobile ? 'text-2xl' : 'text-3xl'} text-rose-600 justify-center items-center `}/>
-            </button>
           </div>
         </div>
         <div 
@@ -262,6 +259,9 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
         </div>
         
         <div className="hidden md:flex w-full justify-end pr-2">
+          <button onClick={() =>{downloadFileAtURL(songUrl)}}>
+            <FiDownload className={` ${ isMobile ? 'text-2xl' : 'text-3xl'} text-rose-600 justify-center items-center mr-4`}/>
+          </button>
           <div className="flex items-center gap-x-2 w-[120px]">
             <VolumeIcon 
               onClick={toggleMute} 
